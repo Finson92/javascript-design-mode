@@ -1,0 +1,30 @@
+<script>
+function Student(name, gender, score) {
+    this.name = name
+    this.gender = gender
+    this.score = score
+    this.quality = 100
+    // this.sumScore = sumScore 
+    /* 每new一个新的实例都是引用同一个0
+        而之前的写法是每次new一个实例都生成一个新的 sumScore函数
+    */
+
+}
+// var sumScore = function() {
+//     return this.score + this.quality
+// }
+
+// 原型写法
+Student.prototype.sumScore = function() {
+    return this.score + this.quality
+}
+
+var whh = new Student('hww', 'female', 98)
+var lsd = new Student('lsd', 'male', 78)
+
+whh.score = 88
+
+console.log(whh.name)
+console.log(lsd.name)
+console.log(whh.sumScore())
+</script>
